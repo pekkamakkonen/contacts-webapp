@@ -1,4 +1,21 @@
-<div>
-  <router-outlet></router-outlet>
-  <!-- Component is loaded here -->
-</div>
+<mat-sidenav-container class="cw-sidenav-container">
+  <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false">
+    <!-- Sidenav content -->
+    <span>Sidenav content</span>
+  </mat-sidenav>
+  <div>
+    <!-- App content -->
+    <mat-toolbar color="primary">
+    <!-- Toolbar -->
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="mat-18">menu</mat-icon>
+      </button>
+      <span>Contact application</span>
+    </mat-toolbar>
+    <div class="cw-app-container">
+      <!-- App -->
+      <router-outlet></router-outlet>
+      <!-- Component is loaded here -->
+    </div>
+  </div>
+</mat-sidenav-container>
