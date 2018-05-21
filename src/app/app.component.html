@@ -1,7 +1,19 @@
 <mat-sidenav-container class="cw-sidenav-container">
-  <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false">
+  <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false" class="cw-sidenav">
     <!-- Sidenav content -->
-    <span>Sidenav content</span>
+    <div>
+      <div fxLayout="column" fxLayoutAlign="center center" class="cv-sidenav-user-area">
+        <div>
+          <mat-icon class="cw-sidenav-avatar" color="primary">account_circle</mat-icon>
+        </div>
+        <div>
+          <span>Pekka Makkonen</span>
+        </div>
+      </div>
+      <div>
+        <span>Sidenav content</span>
+      </div>
+    </div>
   </mat-sidenav>
   <div>
     <!-- App content -->

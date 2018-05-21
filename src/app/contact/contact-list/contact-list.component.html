@@ -1,5 +1,13 @@
-<div *ngFor="let contact of contacts" (click)="onContactSelect(contact)">
-  <p>
-    {{contact.firstName}} {{contact.lastName}} {{contact.streetAddress}} {{contact.postalCode}} {{contact.city}} {{contact.phoneNumber}} {{contact.emailAddress}}
-  </p>
-</div>
+<mat-list>
+
+  <mat-list-item *ngFor="let contact of contacts" (click)="onContactSelect(contact)">
+    <avatar matListIcon
+      [name]="contact.firstName"
+    [displayType]="'circle'"
+    [size]="30">
+    </avatar>
+    <!-- <mat-icon matListIcon="">insert_emoticon</mat-icon> -->
+    <h4 matLine>{{contact.firstName}}  {{contact.lastName}}</h4>
+    <p matLine>{{contact.phoneNumber}}</p>
+  </mat-list-item>
+</mat-list>
