@@ -17,14 +17,11 @@
   </mat-sidenav>
 
   <div fxFlexFill=" class=cw-sidenav-content">
-    <!-- App content -->
-    <mat-toolbar color="primary">
-    <!-- Toolbar -->
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon class="mat-18">menu</mat-icon>
-      </button>
-      <span>Contact application</span>
-    </mat-toolbar>
+
+    <!-- Kommentoitu osa tähän -->
+
+<cw-tool-bar (onMenuClick)="sidenav.toggle()"></cw-tool-bar>
+
     <div class="cw-app-container">
       <!-- App -->
       <router-outlet></router-outlet>
