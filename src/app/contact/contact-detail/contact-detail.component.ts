@@ -37,4 +37,8 @@ export class ContactDetailComponent implements OnInit {
     this.router.navigate(['/contacts']);
   }
 
+  onSave(): void {
+    console.log('TODO: Save');
+  }
+
 }
