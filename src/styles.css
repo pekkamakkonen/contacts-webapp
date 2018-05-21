@@ -7,3 +7,13 @@ html, body {
   height: 100%;
   weight: 100%;
 }
+
+.cw-fab {
+  position: absolute !important;
+  bottom: 20px;
+  right: 20px;
+}
+
+.cw-card-layout {
+  margin: 24px;
+}

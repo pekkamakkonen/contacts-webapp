@@ -1,7 +1,65 @@
-<div *ngIf="contact">
+<mat-card class="cw-card-layout">
   <h2>{{contact.firstName}} {{contact.lastName}}</h2>
   <p>Address: {{contact.streetAddress}}, {{contact.postalCode}}, {{contact.city}}</p>
   <p>Phone: {{contact.phoneNumber}}</p>
   <p>Email: {{contact.emailAddress}}</p>
-  <button mat-raised-button (click)="onNavigateBack()" color="primary">Back</button>
-</div>
+  <button mat-raised-button (click)="onNavigateBack()" color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <div fxLayout="row" fxLayoutAlign="center start">
+  <div fxLayout="column" class="cw-contact.detail.fields">
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.firstName"
+             type="text"
+             required
+             placeholder="First Name">
+    </mat-form-field>
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.lastName"
+             type="text"
+             required
+             placeholder="Last Name">
+    </mat-form-field>
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.phoneNumber"
+             type="text"
+             required
+             placeholder="Phone Number">
+    </mat-form-field>
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.emailAddress"
+             type="text"
+             required
+             placeholder="Email">
+    </mat-form-field>
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.streetAddress"
+             type="text"
+             required
+             placeholder="Street Address">
+    </mat-form-field>
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.postalCode"
+             type="text"
+             required
+             placeholder="Postal Code">
+    </mat-form-field>
+
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.city"
+             type="text"
+             required
+             placeholder="City">
+    </mat-form-field>
+
+  </div>
+  </div>
+
+</mat-card>
