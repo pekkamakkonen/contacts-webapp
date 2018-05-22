@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ContactService} from '../services/contact.service';
 import {Contact} from '../contact';
 import {ToolbarService} from '../../ui/tool-bar/toolbar.service';
+import {ToolbarOptions} from '../../ui/tool-bar/toolbar-options';
 import {ToolbarAction} from '../../ui/tool-bar/toolbar-action';
 
 @Component({
@@ -14,14 +15,17 @@ export class ContactDetailComponent implements OnInit {
 
   contact: Contact;
 
-  constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService, private toolbar: ToolbarService) {
+  constructor(private router: Router, private route: ActivatedRoute,
+              private contactService: ContactService, private toolbar: ToolbarService) {
     this.contact = new Contact();
   }
 
   ngOnInit() {
-    this.toolbar.toolbarOptions.next(new ToolbarOptions('Contact', [
-      new ToolbarAction(this.onEdit(), 'edit')
-    ]));
+    this.toolbar.toolbarOptions.next(
+      new ToolbarOptions(
+        'Contact', [
+          new ToolbarAction(this.onEdit, 'edit')
+        ]));
 
     const contactId = this.route.snapshot.paramMap.get('id');
 
@@ -48,7 +52,7 @@ export class ContactDetailComponent implements OnInit {
   }
 
   onEdit() {
-    console.log('TODO: activate:')
+    console.log('TODO: activate/deactivate edit mode');
   }
 
 }

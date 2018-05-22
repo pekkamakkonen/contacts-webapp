@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let contact of contacts |  orderBy: 'firstName'" (click)="onContactSelect(contact)">
+  <mat-list-item *ngFor="let contact of contacts | orderBy: 'firstName'" (click)="onContactSelect(contact)">
     <avatar matListIcon
       class="cw-contact-list-item"
       [name]="contact.firstName"

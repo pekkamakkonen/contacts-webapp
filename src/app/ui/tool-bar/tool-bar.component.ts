@@ -9,11 +9,11 @@ import {ToolbarOptions} from './toolbar-options';
 })
 export class ToolBarComponent implements OnInit {
 
-  @Output() onMenuClick: EventEmitter<any>;
+  @Output() MenuClick: EventEmitter<any>;
   options: ToolbarOptions;
 
-  constructor(private  toolbar: ToolbarService) {
-    this.onMenuClick = new EventEmitter<any>();
+  constructor(private toolbar: ToolbarService) {
+    this.MenuClick = new EventEmitter<any>();
   }
 
   ngOnInit() {
@@ -21,8 +21,9 @@ export class ToolBarComponent implements OnInit {
   });
   }
 
-  menuClick() {
-    this.onMenuClick.emit();
+  onmenuClick() {
+    console.log('Toolbar: onMenuClick');
+    this.MenuClick.emit();
   }
 
 }

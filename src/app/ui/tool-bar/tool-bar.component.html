@@ -1,7 +1,9 @@
 <mat-toolbar color="primary">
-  <!-- Toolbar -->
-  <button mat-icon-button (click)="menuClick()">
+  <button mat-icon-button (click)="onmenuClick()">
     <mat-icon class="mat-18">menu</mat-icon>
   </button>
-  <span>{{options.title}}</span>
+  <span fxFlex>{{options.title}}</span>
+  <button mat-icon-button (click)="action.runAction()" *ngFor="let action of options.actions">
+    <mat-icon>{{action.icon}}</mat-icon>
+  </button>
 </mat-toolbar>
