@@ -39,7 +39,7 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     MaterialComponentsModule,
     FlexLayoutModule,
-    AvatarModule,
+    AvatarModule.forRoot(),
     NgPipesModule
   ],
   providers: [

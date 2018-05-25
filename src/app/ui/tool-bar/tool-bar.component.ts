@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ToolbarService} from './toolbar.service';
 import {ToolbarOptions} from './toolbar-options';
-import {Location, Location} from '@angular/common';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'cw-tool-bar',
@@ -18,11 +18,13 @@ export class ToolBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.toolbar.toolbarOptions.subscribe((options: ToolbarOptions) => { this.options = options
-  });
+
+    this.toolbar.getToolbarOptions().subscribe((options: ToolbarOptions) => {
+    this.options = options;
+    });
   }
 
-  onmenuClick() {
+  onMenuClick() {
     this.MenuClick.emit();
   }
 

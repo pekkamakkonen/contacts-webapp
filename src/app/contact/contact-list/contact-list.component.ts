@@ -13,8 +13,6 @@ import {ToolbarOptions} from '../../ui/tool-bar/toolbar-options';
 export class ContactListComponent implements OnInit {
 
   contacts: Contact[];
-  editingEnabled: boolean;
-  contactId: any;
 
   constructor(private contactService: ContactService,
               private router: Router, private toolbar: ToolbarService) {
@@ -22,7 +20,8 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.toolbar.toolbarOptions.next(new ToolbarOptions(false, 'Contacts', []));
+    // this.toolbar.toolbarOptions.next(new ToolbarOptions(false, 'Contacts', []));
+    this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts', []));
 
     this.contactService.getContacts().subscribe(response => {
       this.contacts = response;
@@ -31,7 +30,6 @@ export class ContactListComponent implements OnInit {
   }
 
   onContactSelect(contact): void {
-    // console.log(contact.id);
     this.router.navigate(['/contacts', contact.id]);
   }
 
