@@ -1,0 +1,44 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "First",
+      "lastName": "Contact",
+      "streetAddress": "Laserkatu 6",
+      "city": "Lappeenranta",
+      "postalCode": "53850",
+      "phoneNumber": "0401234567",
+      "emailAddress": "first.contact@somewhere.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Second",
+      "lastName": "Contact",
+      "streetAddress": "Laserkatu 6",
+      "city": "Lappeenranta",
+      "postalCode": "53850",
+      "phoneNumber": "0441234567",
+      "emailAddress": "second.contact@somewhere.com"
+    },
+    {
+      "id": 3,
+      "firstName": "Third",
+      "lastName": "Contact",
+      "streetAddress": "Laserkatu 6",
+      "city": "Lappeenranta",
+      "postalCode": "53850",
+      "phoneNumber": "0461234567",
+      "emailAddress": "third.contact@somewhere.com"
+    },
+    {
+      "firstName": "Sixth",
+      "lastName": "Contact",
+      "streetAddress": "yes",
+      "city": "yes",
+      "postalCode": "yes",
+      "phoneNumber": "yes",
+      "emailAddress": "yes",
+      "id": 7
+    }
+  ]
+}

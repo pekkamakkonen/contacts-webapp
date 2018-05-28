@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Contact} from '../contact';
@@ -35,7 +35,7 @@ export class ContactHttpService {
   }
 
   post(contact): Observable<Contact> {
-    return this.httpClient.put(this.url, contact).pipe(map(response => {
+    return this.httpClient.post(this.url, contact).pipe(map(response => {
       return response as Contact;
     }));
   }
@@ -44,5 +44,3 @@ export class ContactHttpService {
     return this.httpClient.delete(this.url + '/' + contact.id);
   }
 }
-
-

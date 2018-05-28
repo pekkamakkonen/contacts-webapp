@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiEndpointUrl: 'http://localhost:57414/api/contacts'
 };

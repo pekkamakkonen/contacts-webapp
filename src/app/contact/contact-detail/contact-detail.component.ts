@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ContactService} from '../services/contact.service';
 import {Contact} from '../contact';
-import {ToolbarService} from '../../ui/tool-bar/toolbar.service';
-import {ToolbarOptions} from '../../ui/tool-bar/toolbar-options';
-import {ToolbarAction} from '../../ui/tool-bar/toolbar-action';
+import {ToolbarService} from '../../ui/toolbar/toolbar.service';
+import {ToolbarOptions} from '../../ui/toolbar/toolbar-options';
+import {ToolbarAction} from '../../ui/toolbar/toolbar-action';
 
 @Component({
   selector: 'cw-contact-detail',
@@ -36,7 +36,7 @@ export class ContactDetailComponent implements OnInit {
       // View/Edit contact
       toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
 
-      this.contactService.getContactByID(this.contactId).subscribe(response => {
+      this.contactService.getContactById(this.contactId).subscribe(response => {
         this.contact = response;
         console.log(this.contact);
       }, error => {
@@ -46,7 +46,7 @@ export class ContactDetailComponent implements OnInit {
       });
     }
 
-  this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact', toolbarActions));
+    this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact', toolbarActions));
 
   }
 
@@ -55,9 +55,8 @@ export class ContactDetailComponent implements OnInit {
       // Create contact
       this.editingEnabled = false;
       this.contactService.createContact(this.contact).subscribe(response => {
-
-      console.log((response));
-      this.router.navigate(['contacts']);
+        console.log(response);
+        this.router.navigate(['/contacts']);
       });
     } else {
       // Edit contact
@@ -66,6 +65,7 @@ export class ContactDetailComponent implements OnInit {
         this.contact = response;
       });
     }
+
   }
 
   onEdit() {
@@ -74,13 +74,16 @@ export class ContactDetailComponent implements OnInit {
     if (this.editingEnabled === true) {
       // Edit mode on
       console.log('Edit mode enabled');
-      toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
+      toolbarActions = [
+        new ToolbarAction(this.onDelete.bind(this), 'delete'),
+        new ToolbarAction(this.onEdit.bind(this), 'edit')
+      ];
     } else {
       // Edit mode off
       console.log('Edit mode disabled');
-      toolbarActions = [new ToolbarAction(this.onDelete.bind(this), 'delete')];
       toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
     }
+    this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact', toolbarActions));
   }
 
   onDelete() {

@@ -1,69 +1,59 @@
 <mat-card class="cw-card-layout">
-  
+
   <div fxLayout="row" fxLayoutAlign="center start">
-  <div fxLayout="column" class="cw-contact.detail.fields">
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.firstName"
-             type="text"
-             required
-             placeholder="First Name"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.lastName"
-             type="text"
-             required
-             placeholder="Last Name"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.phoneNumber"
-             type="text"
-             required
-             placeholder="Phone Number"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.emailAddress"
-             type="text"
-             required
-             placeholder="Email"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.streetAddress"
-             type="text"
-             required
-             placeholder="Street Address"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.postalCode"
-             type="text"
-             required
-             placeholder="Postal Code"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
-    <mat-form-field floatPlaceholder="auto">
-      <input matInput [(ngModel)]="contact.city"
-             type="text"
-             required
-             placeholder="City"
-             [readonly]="!editingEnabled">
-    </mat-form-field>
-
+    <div fxLayout="column" class="cw-contact-detail-fields">
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.firstName"
+               type="text"
+               required
+               placeholder="First name"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.lastName"
+               type="text"
+               required
+               placeholder="Last name"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.phoneNumber"
+               type="text"
+               required
+               placeholder="Phone"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.emailAddress"
+               type="text"
+               required
+               placeholder="Email"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.streetAddress"
+               type="text"
+               required
+               placeholder="Street address"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.postalCode"
+               type="text"
+               required
+               placeholder="Postal code"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="contact.city"
+               type="text"
+               required
+               placeholder="City"
+               [readonly]="!editingEnabled">
+      </mat-form-field>
+    </div>
   </div>
-  </div>
-
 </mat-card>
-
-<button *ngIf="editingEnabled" mat-fab (click)="onSave()">
-  <mat-icon class="cw-fab">check</mat-icon>
+<button *ngIf="editingEnabled" mat-fab (click)="onSave()" class="cw-fab">
+  <mat-icon>check</mat-icon>
 </button>

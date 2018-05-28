@@ -1,15 +1,13 @@
 <mat-nav-list>
   <mat-list-item *ngFor="let contact of contacts | orderBy: 'firstName'" (click)="onContactSelect(contact)">
-    <avatar matListIcon
-      class="cw-contact-list-item"
-      [name]="contact.firstName"
-    [displayType]="'circle'"
+    <avatar matListIcon class="cw-contact-list-item-avatar"
+            [name]="contact.firstName"
+            [displayType]="'circle'"
             [background]="contact.firstName | textToColor"
-    [size]="35">
+            [size]="35">
     </avatar>
-    <!-- <mat-icon matListIcon="">insert_emoticon</mat-icon> -->
-    <h4 matLine>{{contact.firstName}}  {{contact.lastName}}</h4>
-    <p matLine>{{contact.phoneNumber}}</p>
+    <h4 matLine>{{contact.firstName + ' ' + contact.lastName}}</h4>
+    <p matLine> {{contact.phoneNumber}} </p>
   </mat-list-item>
 </mat-nav-list>
 

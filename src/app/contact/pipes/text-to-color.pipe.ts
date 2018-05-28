@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'textToColor'
@@ -33,8 +33,7 @@ export class TextToColorPipe implements PipeTransform {
     if (value == null || value === '') {
       return this.defaultColor;
     }
-    const firstChar = value.charAt(0).toLocaleLowerCase();
+    const firstChar = value.charAt(0).toLowerCase();
     return this.colors[firstChar];
   }
-
 }

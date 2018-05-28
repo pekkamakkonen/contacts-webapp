@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Contact} from '../contact';
 import {ContactService} from '../services/contact.service';
 import {Router} from '@angular/router';
-import {ToolbarService} from '../../ui/tool-bar/toolbar.service';
-import {ToolbarOptions} from '../../ui/tool-bar/toolbar-options';
+import {ToolbarService} from '../../ui/toolbar/toolbar.service';
+import {ToolbarOptions} from '../../ui/toolbar/toolbar-options';
 
 @Component({
   selector: 'cw-contact-list',
@@ -20,7 +20,6 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.toolbar.toolbarOptions.next(new ToolbarOptions(false, 'Contacts', []));
     this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts', []));
 
     this.contactService.getContacts().subscribe(response => {
@@ -30,6 +29,7 @@ export class ContactListComponent implements OnInit {
   }
 
   onContactSelect(contact): void {
+    // console.log(contact.id);
     this.router.navigate(['/contacts', contact.id]);
   }
 
