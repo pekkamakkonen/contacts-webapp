@@ -16,12 +16,16 @@ import {TextToColorPipe} from './contact/pipes/text-to-color.pipe';
 import {NgPipesModule} from 'ngx-pipes';
 import { ToolbarComponent } from './ui/toolbar/toolbar.component';
 import {ToolbarService} from './ui/toolbar/toolbar.service';
+import { LoginComponent } from './user/login/login.component';
+import {AuthenticationService} from './user/services/authentication.service';
+import {TokenService} from './user/services/token.service';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
   {path: 'contacts/new', component: ContactDetailComponent},
   {path: 'contacts/:id', component: ContactDetailComponent},
-  {path: '', redirectTo: '/contacts', pathMatch: 'full'}
+  {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -30,7 +34,8 @@ const appRoutes: Routes = [
     ContactListComponent,
     ContactDetailComponent,
     TextToColorPipe,
-    ToolbarComponent
+    ToolbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,9 @@ const appRoutes: Routes = [
   providers: [
     ContactService,
     ContactHttpService,
-    ToolbarService
+    ToolbarService,
+    AuthenticationService,
+    TokenService
   ],
   bootstrap: [AppComponent]
 })

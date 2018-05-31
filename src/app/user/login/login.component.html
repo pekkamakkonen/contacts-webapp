@@ -1,0 +1,22 @@
+<mat-card class="cw-card-layout">
+  <div fxLayout="row">
+    <div fxLayout="column">
+      <mat-error *ngIf="loginFailed">{{errorMessage}}</mat-error>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="userCredentials.username"
+               type="text"
+               required
+               placeholder="Username">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput [(ngModel)]="userCredentials.password"
+               type="password"
+               required
+               placeholder="Password">
+      </mat-form-field>
+      <!-- <p *ngIf="loginFailed"><em>{{errorMessage}}</em></p> -->
+
+      <button mat-raised-button (click)="onSignIn()" color="primary">SIGN IN</button>
+    </div>
+  </div>
+</mat-card>
