@@ -27,4 +27,5 @@ export class TokenService {
   clearToken(): void {
     sessionStorage.removeItem(this.storageKey);
   }
+
 }

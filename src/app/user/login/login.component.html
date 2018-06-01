@@ -1,5 +1,5 @@
 <mat-card class="cw-card-layout">
-  <div fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign="center start">
     <div fxLayout="column">
       <mat-error *ngIf="loginFailed">{{errorMessage}}</mat-error>
       <mat-form-field floatPlaceholder="auto">
@@ -14,8 +14,6 @@
                required
                placeholder="Password">
       </mat-form-field>
-      <!-- <p *ngIf="loginFailed"><em>{{errorMessage}}</em></p> -->
-
       <button mat-raised-button (click)="onSignIn()" color="primary">SIGN IN</button>
     </div>
   </div>

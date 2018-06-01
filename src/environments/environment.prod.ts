@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpointUrl: 'http://contactswebapimakkonen.azurewebsites.net'
+  apiEndpointUrl: 'https://ekoodicontactsapi.azurewebsites.net'
 };
