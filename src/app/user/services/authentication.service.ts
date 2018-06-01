@@ -3,8 +3,8 @@ import {environment} from '../../../environments/environment';
 import {UserCredentials} from '../user-credentials';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {TokenService} from './token.service';
 import {map} from 'rxjs/operators';
+import {TokenService} from './token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,5 @@ export class AuthenticationService {
   signOutUser(): void {
     this.tokenService.clearToken();
   }
-
-
 
 }

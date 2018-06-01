@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService, private router: Router) {
     this.userCredentials = new UserCredentials();
     this.loginFailed = false;
-    this.errorMessage = null;
+    this.errorMessage = '';
   }
 
   ngOnInit() {
@@ -28,17 +28,16 @@ export class LoginComponent implements OnInit {
     console.log(this.userCredentials);
     this.loginFailed = false;
     this.errorMessage = '';
-    this.authenticationService.signInUser(this.userCredentials).subscribe(result => {
-      console.log(result);
-
-      this.router.navigate(['/contacts']);
+    this.authenticationService.signInUser(this.userCredentials)
+      .subscribe(result => {
+        this.router.navigate(['/contacts']);
     }, error => {
-      this.userCredentials.username = null;
-      this.userCredentials.password = null;
-      this.loginFailed = true;
-      this.errorMessage = 'Sign in failed';
-      console.error('User sign in failed');
-    });
+        this.userCredentials.username = '';
+        this.userCredentials.password = '';
+        this.loginFailed = true;
+        this.errorMessage = 'Sign in failed';
+        console.error('User sign in failed');
+      });
   }
 
 }
